@@ -1,38 +1,30 @@
-import styles from "./index.module.css";
+import  "../assets/css/style.css";
 import { type VoidComponent } from "solid-js";
 import { A } from "solid-start";
+import Blog from '../components/Blog'
 
 const Home: VoidComponent = () => {
   return (
     <main>
-      <div class={styles.container}>
-        <h1 class={styles.title}>
-          Create <span class={styles.greenSpan}>JD</span> App
-        </h1>
-        <div class={styles.cardRow}>
-          <A
-            class={styles.card}
-            href="https://start.solidjs.com"
-            target="_blank"
-          >
-            <h3 class={styles.cardTitle}>Solid Start →</h3>
-            <div class={styles.cardText}>
-              Learn more about Solid Start and the basics.
+       <div class="container">
+          <div class="row g-4">
+
+            <div class="col-lg-8">
+              <div class="bg-mode p-4">
+                <h1 class="h4 mb-4">Latest blogs</h1>
+
+                <Blog/>
+                <Blog/>
+                <Blog/>
+
+
+
+
+                </div>
             </div>
-          </A>
-          <A
-            class={styles.card}
-            href="https://github.com/orjdev/create-jd-app"
-            target="_blank"
-          >
-            <h3 class={styles.cardTitle}>JD End →</h3>
-            <div class={styles.cardText}>
-              Learn more about Create JD App, the libraries it uses, and how to
-              deploy it
-            </div>
-          </A>
+          
+          </div>
         </div>
-      </div>
     </main>
   );
 };

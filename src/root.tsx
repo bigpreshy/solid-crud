@@ -13,6 +13,7 @@ import {
   Title,
   Link,
 } from "solid-start";
+import Blog from './components/Blog';
 
 export default function Root() {
   return (
