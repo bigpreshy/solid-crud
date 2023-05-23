@@ -1,7 +1,9 @@
 import "../assets/css/style.css";
 import { type VoidComponent } from "solid-js";
-import { A } from "solid-start";
-import Blog from '../components/Blog'
+import { A, Router, Route, Routes } from "@solidjs/router";
+import Blog from '../components/Blog';
+import BlogDetail from '../components/BlogDetail';
+
 
 const Home: VoidComponent = () => {
   return (
@@ -12,13 +14,17 @@ const Home: VoidComponent = () => {
             <div class="bg-mode p-4">
               <h1 class="h4 mb-4">Latest blogs</h1>
               <Blog />
-            
 
             </div>
           </div>
 
         </div>
       </div>
+      <Router>
+      <Routes>
+        <Route path='/blog/:_id' component={BlogDetail}/>       
+      </Routes>
+      </Router>
     </main>
   );
 };

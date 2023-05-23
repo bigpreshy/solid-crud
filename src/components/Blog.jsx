@@ -1,9 +1,9 @@
 import { For, createResource } from "solid-js";
+import { A } from "@solidjs/router";
 import solidimage from "../assets/images/solid.jpg";
-
 const getBlogs = async () => {
   const response = await fetch(
-    "https://crudcrud.com/api/6a1613c7646f4a908158592cfdb448aa/blog"
+    "https://crudcrud.com/api/64b773f6659a41b69d678369943f3c5f/blog"
   );
   return response.json();
 };
@@ -21,19 +21,19 @@ function Blog() {
                   <img class="rounded" src={solidimage} alt="" />
                 </div>
                 <div class="col-8">
-                  <a
-                    href="#"
+                  <A
+                    href={`blog/${eachblog._id}`}
                     class="badge bg-danger bg-opacity-10 text-danger mb-2 fw-bold"
                   >
                     {eachblog.tag}
-                  </a>
+                  </A>
                   <h5>
-                    <a
-                      href="blog-details.html"
+                    <A
+                      href={`blog/${eachblog._id}`}
                       class="btn-link stretched-link text-reset fw-bold"
                     >
                       {eachblog.title}
-                    </a>
+                    </A>
                   </h5>
                   <div class="d-none d-sm-inline-block">
                     <p class="mb-2">{eachblog.text}</p>
