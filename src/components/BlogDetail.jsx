@@ -1,7 +1,7 @@
 import { useParams } from "@solidjs/router"
 import { createResource } from "solid-js"
 
-const getBlog = async (id) => {
+const getBlog = async (_id) => {
   const response = await fetch('https://crudcrud.com/api/64b773f6659a41b69d678369943f3c5f/blog/' + _id)
 
   return response.json()
